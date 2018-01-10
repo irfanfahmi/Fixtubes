@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <fragment
+        android:id="@+id/mapi"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_weight="0.97" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="1dp">
+
+        <Button
+            android:id="@+id/btn_masjid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cari Masjid"
+            android:textColor="@color/putih"
+            android:background="@color/colorPrimary"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

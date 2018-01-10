@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/bacaan_syahadat"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=" أشهد أن لا اله الا الله وأشهد ان محمد رسول الله"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/arti_syahadat"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/syahadat"
+        android:textSize="20sp" />
+
+    <Button
+        android:padding="20dp"
+        android:id="@+id/shareit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+
+        android:background="#20b2aa"
+        android:text="Share"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/syahadat" android:title="Syahadat" android:icon="@drawable/ic_syahadat" android:onClick="kliksyahadat"/>
+    <item android:id="@+id/sholat" android:title="Sholat" android:icon="@drawable/ic_sholat" android:onClick="kliksholat"/>
+    <item android:id="@+id/lokasimasjid" android:title="Lokasi Masjid" android:icon="@drawable/logo_masjid" android:onClick="kliklokasi"/>
+    <item android:id="@+id/Doa" android:title="Doa" android:icon="@drawable/ic_wifi_black_24dp" android:onClick="klikdoa"/>
+    <item android:id="@+id/Video" android:title="Kajian" android:icon="@drawable/ic_subscriptions_black_24dp" android:onClick="klikkajian"/>
+</menu>
