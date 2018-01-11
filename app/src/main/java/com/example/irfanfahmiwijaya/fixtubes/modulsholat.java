@@ -3,6 +3,7 @@ package com.example.irfanfahmiwijaya.fixtubes;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -34,6 +35,7 @@ public class modulsholat extends Activity {
      * setiap daerah akan berbeda*/
     double latitude = -6.903429;
     double longitude = 107.5030708;
+
 
     int year, month, day;
 
@@ -123,4 +125,8 @@ public class modulsholat extends Activity {
         }
     };
 
+    public void klikkiblat(View view) {
+        Intent klikkiblat = new Intent(modulsholat.this,modulkiblat.class);
+        startActivity(klikkiblat);
+    }
 }
