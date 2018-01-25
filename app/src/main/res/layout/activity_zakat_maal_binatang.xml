@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="45dp"
+            android:padding="10dp"
+            android:text="Zakat Maal" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Jumlah ternak yang dimiliki" />
+
+        <EditText
+            android:id="@+id/jml_ternak"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:id="@+id/rbinatang">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rsapi"
+                    android:text="Sapi"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rkambing"
+                    android:text="Kambing"/>
+
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/hitung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#398f3d"
+            android:text="Hitung" />
+
+        <TextView
+            android:id="@+id/tampil"
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            android:background="#3a903e"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" " />
+
+        <TextView
+            android:id="@+id/ket"
+            android:padding="10dp"
+            android:gravity="bottom"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="*Keterangan:
+\n-Tabi’ dan tabi’ah adalah sapi jantan dan betina yang berusia setahun. \n- Musinnah adalah sapi betina yang berusia 2 tahun.
+\n-Nisab sapi adalah 30 ekor
+\n-Nisab kambing adalah 40 ekor"/>
+
+    </LinearLayout>
+</LinearLayout>

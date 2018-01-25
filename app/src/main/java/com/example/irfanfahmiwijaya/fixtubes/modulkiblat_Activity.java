@@ -24,7 +24,7 @@ import android.view.View;
  * Created by irfanfahmiwijaya on 11/01/2018.
  */
 
-public class modulkiblat extends Activity {
+public class modulkiblat_Activity extends Activity {
 
 
     private static final String TAG = "Compass";
@@ -130,17 +130,21 @@ public class modulkiblat extends Activity {
 
 // Construct a wedge-shaped path
             mPath.moveTo(0, -100);
-            mPath.lineTo(20, 120);
+            mPath.lineTo(60, 160);
             mPath.lineTo(0, 100);
-            mPath.lineTo(-20, 120);
+            mPath.lineTo(-60, 160);
             mPath.close();
         }
+
+
+
+
 
 //make an arrow for pointing direction
 
         protected void onDraw(Canvas canvas) {
             Paint paint = mPaint;
-            this.setBackgroundResource(R.drawable.kompas);
+            this.setBackgroundResource(R.drawable.arah);
             paint.setAntiAlias(true);
             paint.setColor(Color.BLACK);
             int w = canvas.getWidth();

@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.irfanfahmiwijaya.fixtubes.Fragment.fragment_zakat2_maal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="45dp"
+            android:padding="10dp"
+            android:text="Zakat Maal" />
+
+
+        <Button
+            android:id="@+id/z1"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#398f3d"
+            android:textColor="@color/putih"
+            android:text="Binatang Ternak" />
+
+        <Button
+            android:id="@+id/z2"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#45a149"
+            android:textColor="@color/putih"
+            android:text="Emas/Perak" />
+
+        <Button
+            android:id="@+id/z3"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#5cba60"
+            android:textColor="@color/putih"
+            android:text="Pertanian/Hasil Bumi" />
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

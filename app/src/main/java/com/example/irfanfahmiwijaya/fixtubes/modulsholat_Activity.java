@@ -18,11 +18,11 @@ import java.util.Calendar;
  */
 
 
-public class modulsholat extends Activity {
+public class modulsholat_Activity extends Activity {
 
 
 
-    PrayTime prayers;
+    PrayTime_modulsholat prayers;
     TextView mFajr, mSunrise, mDhuhr, mAsr, mSunset, mMaghrib, mIsha, mDate;
     RelativeLayout mlayoutDate;
 
@@ -46,7 +46,7 @@ public class modulsholat extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lay_sholat);
+        setContentView(R.layout.activity_sholat);
 
 
         mFajr		= (TextView) findViewById(R.id.fajr_value);
@@ -63,7 +63,7 @@ public class modulsholat extends Activity {
          * untuk itu timezone sudah di set */
         timezone = (Calendar.getInstance().getTimeZone().getOffset(Calendar.getInstance().getTimeInMillis())) / (1000 * 60 * 60);
 
-        prayers	 = new PrayTime();
+        prayers	 = new PrayTime_modulsholat();
 
         prayers.setTimeFormat(prayers.Time24); //format waktu
         prayers.setCalcMethod(prayers.Makkah); //kalulasi menurut
@@ -126,7 +126,7 @@ public class modulsholat extends Activity {
     };
 
     public void klikkiblat(View view) {
-        Intent klikkiblat = new Intent(modulsholat.this,modulkiblat.class);
+        Intent klikkiblat = new Intent(modulsholat_Activity.this,modulkiblat_Activity.class);
         startActivity(klikkiblat);
     }
 }

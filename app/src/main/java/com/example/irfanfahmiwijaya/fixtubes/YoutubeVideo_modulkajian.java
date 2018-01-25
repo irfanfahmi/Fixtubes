@@ -2,14 +2,14 @@ package com.example.irfanfahmiwijaya.fixtubes;
 
 
 
-public class YoutubeVideo {
+public class YoutubeVideo_modulkajian {
     String videoUrl;
 
-    public YoutubeVideo() {
+    public YoutubeVideo_modulkajian() {
 
     }
 
-    public YoutubeVideo(String videoUrl) {
+    public YoutubeVideo_modulkajian(String videoUrl) {
         this.videoUrl = videoUrl; }
 
     public String getVideoUrl() {

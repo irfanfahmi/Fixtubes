@@ -3,7 +3,11 @@
 
     <item android:id="@+id/syahadat" android:title="Syahadat" android:icon="@drawable/ic_syahadat" android:onClick="kliksyahadat"/>
     <item android:id="@+id/sholat" android:title="Sholat" android:icon="@drawable/ic_sholat" android:onClick="kliksholat"/>
+    <item android:id="@+id/zakat" android:title="Zakat" android:icon="@drawable/ic_zakat" android:onClick="klikzakat"/>
+    <item android:id="@+id/puasa" android:title="Puasa" android:icon="@drawable/ic_puasa" />
+    <item android:id="@+id/haji" android:title="Haji" android:icon="@drawable/ic_haji" />
+    <item android:id="@+id/alquran" android:title="Alquran" android:icon="@drawable/logo_alquran" />
+    <item android:id="@+id/hukumislam" android:title="Hukum Islam" android:icon="@drawable/logo_hukum_islam" />
     <item android:id="@+id/lokasimasjid" android:title="Lokasi Masjid" android:icon="@drawable/logo_masjid" android:onClick="kliklokasi"/>
-    <item android:id="@+id/Doa" android:title="Doa" android:icon="@drawable/ic_wifi_black_24dp" android:onClick="klikdoa"/>
-    <item android:id="@+id/Video" android:title="Kajian" android:icon="@drawable/ic_subscriptions_black_24dp" android:onClick="klikkajian"/>
+
 </menu>

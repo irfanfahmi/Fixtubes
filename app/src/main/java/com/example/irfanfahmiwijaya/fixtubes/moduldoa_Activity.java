@@ -8,13 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class moduldoa extends Activity {
+public class moduldoa_Activity extends Activity {
     EditText edtStatus;
     Button btnShare;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lay_doa);
+        setContentView(R.layout.activity_doa);
         edtStatus = (EditText) findViewById(R.id.isidoa);
         btnShare = (Button) findViewById(R.id.shareit);
         btnShare.setOnClickListener(new View.OnClickListener() {

@@ -12,14 +12,14 @@ import android.widget.TextView;
  */
 
 
-public class modulsyahadat extends Activity {
+public class modulsyahadat_Activity extends Activity {
     TextView isiteks;
     TextView isiteks2;
     Button btnShare;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lay_syahadat);
+        setContentView(R.layout.activity_syahadat);
 
         isiteks = (TextView) findViewById(R.id.bacaan_syahadat);
         isiteks2 = (TextView) findViewById(R.id.arti_syahadat);

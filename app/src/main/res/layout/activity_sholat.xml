@@ -9,10 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_height="360dp">
 
         <LinearLayout
             android:id="@+id/layout_content"
@@ -226,5 +223,20 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/kiblat"
+        android:background="#444"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="klikkiblat"
+        android:text="Kiblat" />
+
+</LinearLayout>
+
 
 </LinearLayout>

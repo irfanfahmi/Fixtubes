@@ -38,7 +38,7 @@ import java.util.List;
  * Created by irfanfahmiwijaya on 07/12/2017.
  */
 
-public class modullokasimasjid extends FragmentActivity implements LocationListener {
+public class modullokasimasjid_Activity extends FragmentActivity implements LocationListener {
 
     private String API_KEY_SERVER = "AIzaSyCVCsKGmpAOwjaA76dkBUjO6NPNcPA-Uo4";
 
@@ -186,7 +186,7 @@ public class modullokasimasjid extends FragmentActivity implements LocationListe
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog = new ProgressDialog(modullokasimasjid.this);
+            progressDialog = new ProgressDialog(modullokasimasjid_Activity.this);
             progressDialog.setIndeterminate(false);
             progressDialog.setCancelable(true);
             progressDialog.setMessage("Loading Peta");
@@ -219,11 +219,11 @@ public class modullokasimasjid extends FragmentActivity implements LocationListe
         protected List<HashMap<String, String>> doInBackground(String... jsonData) {
 
             List<HashMap<String, String>> places = null;
-            ParserJSONPlace parserJSONPlace = new ParserJSONPlace();
+            ParserJSONPlace_PrayTime parserJSONPlacePrayTime = new ParserJSONPlace_PrayTime();
 
             try {
                 jObject = new JSONObject(jsonData[0]);
-                places = parserJSONPlace.parse(jObject);
+                places = parserJSONPlacePrayTime.parse(jObject);
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="45dp"
+            android:padding="10dp"
+            android:text="Zakat Maal" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="Jumlah Emas yang dimiliki" />
+
+        <EditText
+            android:id="@+id/jml_gram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:padding="10dp"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:id="@+id/rpilih">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/remas"
+                android:text="Emas"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rperak"
+                android:text="Perak"/>
+
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/hitung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#398f3d"
+            android:text="Hitung" />
+
+        <TextView
+            android:id="@+id/tampil"
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textColor="#44ffffff"
+            android:layout_marginTop="10dp"
+            android:background="#3a903e"/>
+
+        <TextView
+            android:id="@+id/ket"
+            android:padding="10dp"
+            android:gravity="bottom"
+            android:textSize="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="*Keterangan:
+\n-Nisab emas sebanyak 20 dinar. 1 dinar = 4,25 gram emas. \n-Jadi 20 dinar = 85 gram emas murni
+\n-Nisab perak adalah 200 dirham. 1 dirham = 595 gram"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

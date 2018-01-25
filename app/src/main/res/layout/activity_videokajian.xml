@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.irfanfahmiwijaya.fixtubes.modulkajian">
+    tools:context="com.example.irfanfahmiwijaya.fixtubes.modulkajian_Activity">
 <android.support.v7.widget.Toolbar
     android:id="@+id/toolbarid"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"

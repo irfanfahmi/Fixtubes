@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.TimeZone;
 
-public class PrayTime {
+public class PrayTime_modulsholat {
 
     // ---------------------- Global Variables --------------------
     private int calcMethod; // caculation method
@@ -57,7 +57,7 @@ public class PrayTime {
     private double[] prayerTimesCurrent;
     private int[] offsets;
 
-    public PrayTime() {
+    public PrayTime_modulsholat() {
         // Initialize vars
 
         this.setCalcMethod(0);

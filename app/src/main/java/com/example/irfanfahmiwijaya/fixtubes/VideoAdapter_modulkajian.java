@@ -11,16 +11,16 @@ import java.util.List;
 
 
 
-public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
+public class VideoAdapter_modulkajian extends RecyclerView.Adapter<VideoAdapter_modulkajian.VideoViewHolder> {
 
 
-    List<YoutubeVideo> youtubeVideoList;
+    List<YoutubeVideo_modulkajian> youtubeVideoModulkajianList;
 
-    public VideoAdapter() {
+    public VideoAdapter_modulkajian() {
     }
 
-    public VideoAdapter(List<YoutubeVideo> youtubeVideoList) {
-        this.youtubeVideoList = youtubeVideoList;
+    public VideoAdapter_modulkajian(List<YoutubeVideo_modulkajian> youtubeVideoModulkajianList) {
+        this.youtubeVideoModulkajianList = youtubeVideoModulkajianList;
     }
 
     @Override
@@ -35,13 +35,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     @Override
     public void onBindViewHolder(VideoViewHolder holder, int position) {
 
-        holder.videoWeb.loadData( youtubeVideoList.get(position).getVideoUrl(), "text/html" , "utf-8" );
+        holder.videoWeb.loadData( youtubeVideoModulkajianList.get(position).getVideoUrl(), "text/html" , "utf-8" );
 
     }
 
     @Override
     public int getItemCount() {
-        return youtubeVideoList.size();
+        return youtubeVideoModulkajianList.size();
     }
 
     public class VideoViewHolder extends RecyclerView.ViewHolder{

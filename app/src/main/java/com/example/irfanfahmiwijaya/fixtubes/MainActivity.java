@@ -65,54 +65,66 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void kliksholat(MenuItem item) {
-        Intent kliksholat = new Intent(MainActivity.this,modulsholat.class);
+        Intent kliksholat = new Intent(MainActivity.this,modulsholat_Activity.class);
         startActivity(kliksholat);
     }
 
     public void kliksyahadat(MenuItem item) {
-        Intent kliksyahadat = new Intent(MainActivity.this,modulsyahadat.class);
+        Intent kliksyahadat = new Intent(MainActivity.this,modulsyahadat_Activity.class);
         startActivity(kliksyahadat);
     }
 
 
     public void kliksyahadat(View view) {
-        Intent kliksyahadat = new Intent(MainActivity.this,modulsyahadat.class);
+        Intent kliksyahadat = new Intent(MainActivity.this,modulsyahadat_Activity.class);
         startActivity(kliksyahadat);
     }
 
     public void kliksholat(View view) {
-        Intent kliksholat = new Intent(MainActivity.this,modulsholat.class);
+        Intent kliksholat = new Intent(MainActivity.this,modulsholat_Activity.class);
         startActivity(kliksholat);
     }
 
 
     public void lokasimasjid(View view) {
-        Intent lokasimasjid = new Intent(MainActivity.this,modullokasimasjid.class);
+        Intent lokasimasjid = new Intent(MainActivity.this,modullokasimasjid_Activity.class);
         startActivity(lokasimasjid);
     }
 
     public void kliklokasi(MenuItem item) {
-        Intent lokasimasjid = new Intent(MainActivity.this,modullokasimasjid.class);
+        Intent lokasimasjid = new Intent(MainActivity.this,modullokasimasjid_Activity.class);
         startActivity(lokasimasjid);
     }
 
     public void klikkajian (View view) {
-        Intent klikkajian = new Intent(MainActivity.this,modulkajian.class);
+        Intent klikkajian = new Intent(MainActivity.this,modulkajian_Activity.class);
         startActivity(klikkajian);
     }
 
     public void klikkajian(MenuItem item) {
-        Intent klikkajian = new Intent(MainActivity.this,modulkajian.class);
+        Intent klikkajian = new Intent(MainActivity.this,modulkajian_Activity.class);
         startActivity(klikkajian);
     }
 
     public void klikdoa(View view) {
-        Intent klikdoa = new Intent(MainActivity.this,moduldoa.class);
+        Intent klikdoa = new Intent(MainActivity.this,moduldoa_Activity.class);
         startActivity(klikdoa);
     }
 
     public void klikdoa(MenuItem item) {
-        Intent klikdoa = new Intent(MainActivity.this,moduldoa.class);
+        Intent klikdoa = new Intent(MainActivity.this,moduldoa_Activity.class);
         startActivity(klikdoa);
     }
+
+    public void klikzakat(MenuItem item) {
+        Intent klikzakat = new Intent(MainActivity.this,modulzakat_Activity.class);
+        startActivity(klikzakat);
+    }
+
+    public void klikzakat(View view) {
+        Intent klikzakat = new Intent(MainActivity.this,modulzakat_Activity.class);
+        startActivity(klikzakat);
+    }
+
+
 }

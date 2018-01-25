@@ -10,7 +10,7 @@ import java.util.List;
 
 
 
-public class ParserJSONPlace {
+public class ParserJSONPlace_PrayTime {
 
     //parsing data pada jason
 
