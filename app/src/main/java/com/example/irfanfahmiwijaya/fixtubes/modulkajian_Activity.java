@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.VideoAdapter_modulkajian;
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.YoutubeVideo_modulkajian;
+
 import java.util.Vector;
 
 /**

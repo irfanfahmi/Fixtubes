@@ -376,7 +376,7 @@ public class PrayTime_modulsholat {
                                             double longitude, double tZone) {
 
 //		int year = date.get(Calendar.YEAR);
-//		int month = date.get(Calendar.MONTH);
+//		int month = date.get(Calendar.vffvvMONTH);
 //		int day = date.get(Calendar.DATE);
 
         return getDatePrayerTimes(year, month + 1, day, latitude, longitude,

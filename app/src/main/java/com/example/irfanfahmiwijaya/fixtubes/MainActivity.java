@@ -127,4 +127,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void klikpuasa(View view) {
+        Intent klikpuasa = new Intent(MainActivity.this,modulpuasa_Activity.class);
+        startActivity(klikpuasa);
+    }
+
+    public void klikhaji(View view) {
+        Intent klikhaji = new Intent(MainActivity.this,modulhaji_Activity.class);
+        startActivity(klikhaji);
+    }
 }
