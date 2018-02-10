@@ -469,7 +469,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:onClick="klikhaji"
-                            android:orientation="vertical">
+                            android:orientation="vertical"/>
 
                             <ImageView
                                 android:id="@+id/imageView47"
@@ -478,16 +478,6 @@
                                 android:background="@drawable/cerclebackgroundorange"
                                 android:padding="10dp"
                                 android:src="@drawable/ic_haji" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:text="Haji"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
 
                     </android.support.v7.widget.CardView>
                 </LinearLayout>

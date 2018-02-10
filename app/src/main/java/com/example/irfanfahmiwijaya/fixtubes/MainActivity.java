@@ -136,4 +136,9 @@ public class MainActivity extends AppCompatActivity {
         Intent klikhaji = new Intent(MainActivity.this,modulhaji_Activity.class);
         startActivity(klikhaji);
     }
+
+    public void klikinputlokasi(MenuItem item) {
+        Intent klikinputlokasi = new Intent(MainActivity.this,modullokasi_Activity.class);
+        startActivity(klikinputlokasi);
+    }
 }

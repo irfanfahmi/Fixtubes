@@ -9,5 +9,7 @@
     <item android:id="@+id/alquran" android:title="Alquran" android:icon="@drawable/logo_alquran" />
     <item android:id="@+id/hukumislam" android:title="Hukum Islam" android:icon="@drawable/logo_hukum_islam" />
     <item android:id="@+id/lokasimasjid" android:title="Lokasi Masjid" android:icon="@drawable/logo_masjid" android:onClick="kliklokasi"/>
+    <item android:id="@+id/inputlokasi" android:title="Input Lokasi" android:icon="@drawable/ic_wifi_black_24dp" android:onClick="klikinputlokasi"/>
+
 
 </menu>

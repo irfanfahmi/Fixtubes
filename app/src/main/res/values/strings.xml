@@ -2,8 +2,10 @@
     <string name="app_name">Baitul Muslim</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="map_api_key">AIzaSyD-Nfu5ZrmziOU9ZHVlxYUNgafn-P2q7Rc</string>
     <string name="api_key_android">AIzaSyCVCsKGmpAOwjaA76dkBUjO6NPNcPA-Uo4</string>
-    <string name="api_key_gmaps">AIzaSyCVCsKGmpAOwjaA76dkBUjO6NPNcPA-Uo4</string>
+    <string name="api_key_gmaps">AIzaSyD-Nfu5ZrmziOU9ZHVlxYUNgafn-P2q7Rc</string>
+    <string name="google_maps_key">AIzaSyD-Nfu5ZrmziOU9ZHVlxYUNgafn-P2q7Rc</string>
     <string name="syahadat">Asyhadu an-laa ilaaha illallaah  Wa asyhadu anna Muhammadan rasuulullaah
 
         Saya bersaksi bahwa tiada Tuhan selain Allah dan saya bersaksi bahwa Muhammad adalah rasul (utusan) Allah</string>
