@@ -40,6 +40,13 @@ public class zakat_maal_pertanian_activity extends Activity {
         htg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if (jml_kg.getText().toString().length()==0 ){
+                    jml_kg.setError("Harus diisi !");
+
+                }else{
+
+
                 RadioButton choose = (RadioButton) findViewById(rpertanian.getCheckedRadioButtonId());
                 String pilihan;
                 if (choose != null){
@@ -68,7 +75,7 @@ public class zakat_maal_pertanian_activity extends Activity {
 
                     }
                 }
-
+                }
             }
         });
 
