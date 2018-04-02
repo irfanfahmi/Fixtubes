@@ -27,6 +27,7 @@
             android:padding="10dp"
             android:text="Total Penghasilan"
             android:textSize="20dp"
+            android:inputType="number"
             android:textStyle="bold" />
 
 

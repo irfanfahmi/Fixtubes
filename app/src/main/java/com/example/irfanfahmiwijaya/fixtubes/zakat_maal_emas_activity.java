@@ -39,35 +39,43 @@ public class zakat_maal_emas_activity extends Activity {
         htg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioButton choose = (RadioButton) findViewById(rpilih.getCheckedRadioButtonId());
-                String pilihan;
-                if (choose != null){
-                    pilihan = (String) choose.getText();
-                    String a = "";
-                    double hasil;
-                    Double A = Double.parseDouble(String.valueOf(jml_gram.getText()));
 
-                    if(pilihan.equals("Emas")){
-                        if (A < 85) {
-                            a = "Belum mencapai nisabnya emas";
-                            tmpl.setText(a);
-                        }else{
-                            hasil=((A/100 *0.25) * 10);
-                            tmpl.setText("zakat yang di bayar : "+hasil+" gram");
+                if (jml_gram.getText().toString().length()==0 ){
+                    jml_gram.setError("Harus diisi !");
+
+                }else {
+
+                    RadioButton choose = (RadioButton) findViewById(rpilih.getCheckedRadioButtonId());
+                    String pilihan;
+
+
+                    if (choose != null) {
+                        pilihan = (String) choose.getText();
+                        String a = "";
+                        double hasil;
+                        Double A = Double.parseDouble(String.valueOf(jml_gram.getText()));
+
+                        if (pilihan.equals("Emas")) {
+                            if (A < 85) {
+                                a = "Belum mencapai nisabnya emas";
+                                tmpl.setText(a);
+                            } else {
+                                hasil = ((A / 100 * 0.25) * 10);
+                                tmpl.setText("zakat yang di bayar : " + hasil + " gram");
+                            }
+
+                        } else {
+                            if (A < 595) {
+                                a = "Belum mencapai nisabnya perak";
+                                tmpl.setText(a);
+                            } else {
+                                hasil = ((A / 100 * 0.25) * 10);
+                                tmpl.setText("zakat yang di bayar : " + hasil + " gram");
+                            }
+
                         }
-
-                    }else{
-                        if (A < 595) {
-                            a = "Belum mencapai nisabnya perak";
-                            tmpl.setText(a);
-                        }else{
-                            hasil= ((A/100 *0.25) * 10);
-                            tmpl.setText("zakat yang di bayar : "+hasil+" gram");
-                        }
-
                     }
                 }
-
             }
         });
 

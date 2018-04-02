@@ -4,7 +4,7 @@
     <item android:id="@+id/syahadat" android:title="Syahadat" android:icon="@drawable/ic_syahadat" android:onClick="kliksyahadat"/>
     <item android:id="@+id/sholat" android:title="Sholat" android:icon="@drawable/ic_sholat" android:onClick="kliksholat"/>
     <item android:id="@+id/zakat" android:title="Zakat" android:icon="@drawable/ic_zakat" android:onClick="klikzakat"/>
-    <item android:id="@+id/puasa" android:title="Puasa" android:icon="@drawable/ic_puasa" />
+    <item android:id="@+id/puasa" android:title="Puasa" android:icon="@drawable/logo_puasa" />
     <item android:id="@+id/haji" android:title="Haji" android:icon="@drawable/ic_haji" />
     <item android:id="@+id/alquran" android:title="Alquran" android:icon="@drawable/logo_alquran" />
     <item android:id="@+id/hukumislam" android:title="Hukum Islam" android:icon="@drawable/logo_hukum_islam" />

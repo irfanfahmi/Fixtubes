@@ -11,17 +11,43 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private ActionBarDrawerToggle drawerToggle;
+    private MenuItem btninputlokasi;
+    private Button btnLogout;
+    private TextView s;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        s = (TextView) findViewById(R.id.greeting);
+        btninputlokasi = (MenuItem) findViewById(R.id.inputlokasi);
+
+//        btnLogout.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//
+////
+////                MainActivity.start(MainActivity.this);
+////                MainActivity.this.finish();
+//                }
+//        });
+
+
+
+
+
         toolbar = (Toolbar) findViewById(R.id.toolbarid);
         setSupportActionBar(toolbar);
         mDrawer = (DrawerLayout) findViewById(R.id.drawer);
@@ -140,5 +166,23 @@ public class MainActivity extends AppCompatActivity {
     public void klikinputlokasi(MenuItem item) {
         Intent klikinputlokasi = new Intent(MainActivity.this,modullokasi_Activity.class);
         startActivity(klikinputlokasi);
+
+        //logika if (jika sudah login maka langsung inten masuk jika tidak tampil tost anda belum login)
     }
+
+
+//    public void kliklogin(View view) {
+//        Intent kliklogin = new Intent(MainActivity.this,LoginActivity.class);
+//        startActivity(kliklogin);
+//
+//    }
+
+
+
+
+//        //clear sesion
+//    void logoutAct() {
+//        PrefUtil.clear(this);
+//    }
+
 }

@@ -37,9 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
+            android:inputType="number"
             android:padding="10dp"
-            android:text=" "
-            />
+            android:text=" " />
 
         <TextView
             android:id="@+id/textView6"
@@ -54,9 +54,7 @@
             android:layout_height="wrap_content"
             android:background="#398f3d"
             android:padding="10dp"
-            android:text="Hitung"
-            />
-
+            android:text="Hitung" />
 
         <TextView
             android:id="@+id/hsl"

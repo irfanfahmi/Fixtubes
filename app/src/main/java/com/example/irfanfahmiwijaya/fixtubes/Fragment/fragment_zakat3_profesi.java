@@ -35,16 +35,29 @@ public class fragment_zakat3_profesi extends Fragment {
         htg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                double A = Double.parseDouble(totalpenghasilan.getText().toString());
-                double B = Double.parseDouble(hargabrs.getText().toString());
-                int nisab = (int) (520 * B);
 
-                if (A<nisab){
-                    hsl.setText("Belum Mencapai Nisabnya");
-                }else{
-                    int hasil = (int) (A/100 * 2.5);
-                    hsl.setText("Zakat yang harus anda keluarkan Adalah : Rp."+hasil+",-");
+                String in1 = totalpenghasilan.getText().toString();
+                String in2 = hargabrs.getText().toString();
+
+                if (in1.trim().equals("") && in2.trim().equals("") ) {
+                    totalpenghasilan.setError("Harus diisi !");
+                    hargabrs.setError("Harus diisi !");
+                    //Toast.makeText(getActivity(),"Harus Diisi !",Toast.LENGTH_SHORT).show();
+                }else {
+
+                    double A = Double.parseDouble(totalpenghasilan.getText().toString());
+                    double B = Double.parseDouble(hargabrs.getText().toString());
+                    int nisab = (int) (520 * B);
+
+                    if (A<nisab){
+                        hsl.setText("Belum Mencapai Nisabnya");
+                    }else{
+                        int hasil = (int) (A/100 * 2.5);
+                        hsl.setText("Zakat yang harus anda keluarkan Adalah : Rp."+hasil+",-");
+                    }
+
                 }
+
 
             }
         });

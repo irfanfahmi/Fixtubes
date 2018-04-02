@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.example.irfanfahmiwijaya.fixtubes.zakat_fitrah_activity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Zakat Fitrah"
+        android:textSize="45dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Jumlah"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/hrgbrs"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:padding="10dp"
+        android:inputType="number"
+        android:text=" "
+        />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="*Harga beras dipasaran(Kg)" />
+
+    <Button
+        android:id="@+id/htg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#398f3d"
+        android:padding="10dp"
+        android:text="Hitung"
+        />
+
+
+    <TextView
+        android:id="@+id/hsl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text=""
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
