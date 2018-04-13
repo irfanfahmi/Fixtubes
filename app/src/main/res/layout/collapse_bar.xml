@@ -39,9 +39,6 @@
                     android:text="Fitur Utama" />
 
 
-
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -445,7 +442,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:onClick="klikdoa"
+                            android:onClick="klikhaji"
                             android:orientation="vertical">
 
                             <ImageView
@@ -681,7 +678,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:onClick="klikdoa"
+                            android:onClick="kliktasbih"
                             android:orientation="vertical">
 
                             <ImageView
@@ -697,7 +694,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
-                                android:text="Alquran"
+                                android:text="Tasbih"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -751,7 +748,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:onClick="klikdoa"
+                            android:onClick="klikkajian"
                             android:orientation="vertical">
 
                             <ImageView
@@ -767,7 +764,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
-                                android:text="Hitung Waris"
+                                android:text="Video Kajian"
                                 android:textStyle="bold" />
 
                         </LinearLayout>

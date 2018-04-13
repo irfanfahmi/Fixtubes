@@ -56,7 +56,9 @@ public class VideoAdapter_modulkajian extends RecyclerView.Adapter<VideoAdapter_
             videoWeb = (WebView) itemView.findViewById(R.id.webVideoView);
 
             videoWeb.getSettings().setJavaScriptEnabled(true);
+            videoWeb.getSettings().setLoadWithOverviewMode(true);
             videoWeb.setWebChromeClient(new WebChromeClient() {
+
 
 
             } );

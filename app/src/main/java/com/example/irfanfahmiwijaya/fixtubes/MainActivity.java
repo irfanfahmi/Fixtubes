@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void klikkajian (View view) {
-        Intent klikkajian = new Intent(MainActivity.this,modulkajian_Activity.class);
+        Intent klikkajian = new Intent(MainActivity.this,VideoListKajianActivity.class);
         startActivity(klikkajian);
     }
 
@@ -168,6 +168,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(klikinputlokasi);
 
         //logika if (jika sudah login maka langsung inten masuk jika tidak tampil tost anda belum login)
+    }
+
+    public void kliktasbih(View view) {
+        Intent kliktasbih = new Intent(MainActivity.this,modultasbih_Activity.class);
+        startActivity(kliktasbih);
     }
 
 
