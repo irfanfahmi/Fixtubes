@@ -1,72 +1,107 @@
 package com.example.irfanfahmiwijaya.fixtubes;
 
-import android.content.Intent;
+import android.app.ProgressDialog;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
+import android.widget.Toast;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.location.places.Place;
-import com.google.android.gms.location.places.ui.PlacePicker;
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.ApiClient;
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.ApiService;
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.ListLocationModel;
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.LocationModel;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class modullokasi_Activity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Button btPlacesAPI;
-    private EditText tvlatitude;
-    private EditText tvlongitude;
-    private EditText tvalamat;
-    private EditText tvnama;
-    // konstanta untuk mendeteksi hasil balikan dari place picker
-    private int PLACE_PICKER_REQUEST = 1;
+import retrofit2.Call;
+
+public class modullokasi_Activity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+    private List<LocationModel> mListMarker = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modullokasi_);
 
-        tvnama = (EditText) findViewById(R.id.nama);
-        tvalamat = (EditText) findViewById(R.id.alamat);
-        tvlatitude = (EditText) findViewById(R.id.lat);
-        tvlongitude = (EditText) findViewById(R.id.longi);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
 
-        btPlacesAPI = (Button)findViewById(R.id.bt_ppicker);
-        btPlacesAPI.setOnClickListener(new View.OnClickListener() {
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
+
+
+
+        getAllDataLocationLatLng();
+    }
+
+    /**
+     * method ini digunakan menampilkan data marker dari database
+     */
+    private void getAllDataLocationLatLng() {
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Menampilkan data marker ..");
+        dialog.show();
+
+        ApiService apiService = ApiClient.getClient().create(ApiService.class);
+        Call<ListLocationModel> call = apiService.getAllLocation();
+        call.enqueue(new retrofit2.Callback<ListLocationModel>() {
             @Override
-            public void onClick(View view) {
-                // membuat Intent untuk Place Picker
-                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
-                try {
-                    //menjalankan place picker
-                    startActivityForResult(builder.build(modullokasi_Activity.this), PLACE_PICKER_REQUEST);
-
-                    // check apabila <a title="Solusi Tidak Bisa Download Google Play Services di Android" href="http://www.twoh.co/2014/11/solusi-tidak-bisa-download-google-play-services-di-android/" target="_blank">Google Play Services tidak terinstall</a> di HP
-                } catch (GooglePlayServicesRepairableException e) {
-                    e.printStackTrace();
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    e.printStackTrace();
-                }
+            public void onResponse(Call<ListLocationModel> call, retrofit2.Response<ListLocationModel> response) {
+                dialog.dismiss();
+                mListMarker = response.body().getmData();
+                initMarker(mListMarker);
             }
+
+            @Override
+            public void onFailure(Call<ListLocationModel> call, Throwable t) {
+                dialog.dismiss();
+                Toast.makeText(modullokasi_Activity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // menangkap hasil balikan dari Place Picker, dan menampilkannya pada TextView
-        if (requestCode == PLACE_PICKER_REQUEST) {
-            if (resultCode == RESULT_OK) {
-                Place place = PlacePicker.getPlace(this, data);
-                String nama= place.getName().toString();
-                String alamat = place.getAddress().toString();
-                double latitude = place.getLatLng().latitude;
-                double longitude = place.getLatLng().longitude;
-                tvnama.setText(nama);
-                tvalamat.setText(alamat);
-                tvlatitude.setText(""+latitude);
-                tvlongitude.setText(""+longitude);
-            }
+    /**
+     * Method ini digunakan untuk menampilkan semua marker di maps dari data yang didapat dari database
+     * @param listData
+     */
+    private void initMarker(List<LocationModel> listData){
+        //iterasi semua data dan tampilkan markernya
+        for (int i=0; i<mListMarker.size(); i++){
+            //set latlng nya
+            LatLng location = new LatLng(Double.parseDouble(mListMarker.get(i).getLatutide()), Double.parseDouble(mListMarker.get(i).getLongitude()));
+            //tambahkan markernya
+            mMap.addMarker(new MarkerOptions().position(location).title(mListMarker.get(i).getNama_masjid()));
+            //set latlng index ke 0
+            LatLng latLng = new LatLng(Double.parseDouble(mListMarker.get(0).getLatutide()), Double.parseDouble(mListMarker.get(0).getLongitude()));
+            //lalu arahkan zooming ke marker index ke 0
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latLng.latitude,latLng.longitude), 13.0f));
         }
     }
+
 }

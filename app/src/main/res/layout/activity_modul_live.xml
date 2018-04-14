@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.irfanfahmiwijaya.fixtubes.modullokasi_Activity">
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context="com.example.irfanfahmiwijaya.fixtubes.modul_live">
 
-
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <com.google.android.youtube.player.YouTubePlayerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/youtube_player">
+
+    </com.google.android.youtube.player.YouTubePlayerView>
 </LinearLayout>

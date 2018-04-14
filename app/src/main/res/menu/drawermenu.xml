@@ -6,10 +6,10 @@
     <item android:id="@+id/zakat" android:title="Zakat" android:icon="@drawable/ic_zakat" android:onClick="klikzakat"/>
     <item android:id="@+id/puasa" android:title="Puasa" android:icon="@drawable/logo_puasa" />
     <item android:id="@+id/haji" android:title="Haji" android:icon="@drawable/ic_haji" />
-    <item android:id="@+id/alquran" android:title="Alquran" android:icon="@drawable/logo_alquran" />
-    <item android:id="@+id/hukumislam" android:title="Hukum Islam" android:icon="@drawable/logo_hukum_islam" />
+    <item android:id="@+id/alquran" android:title="Alquran" android:icon="@drawable/ic_quran" />
+    <item android:id="@+id/hukumislam" android:title="Hadist" android:icon="@drawable/ic_hadist" />
     <item android:id="@+id/lokasimasjid" android:title="Lokasi Masjid" android:icon="@drawable/logo_masjid" android:onClick="kliklokasi"/>
-    <item android:id="@+id/inputlokasi" android:title="Input Lokasi" android:icon="@drawable/ic_wifi_black_24dp" android:onClick="klikinputlokasi"/>
+    <item android:id="@+id/inputlokasi" android:title="Input Lokasi" android:icon="@drawable/logo_masjid" android:onClick="klikinputlokasi"/>
 
 
 </menu>

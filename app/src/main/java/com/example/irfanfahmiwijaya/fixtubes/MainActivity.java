@@ -113,13 +113,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void lokasimasjid(View view) {
-        Intent lokasimasjid = new Intent(MainActivity.this,modullokasimasjid_Activity.class);
+        Intent lokasimasjid = new Intent(MainActivity.this,modullokasi_Activity.class);
         startActivity(lokasimasjid);
     }
 
     public void kliklokasi(MenuItem item) {
-        Intent lokasimasjid = new Intent(MainActivity.this,modullokasimasjid_Activity.class);
-        startActivity(lokasimasjid);
+        Intent kliklokasi = new Intent(MainActivity.this,modullokasimasjid_Activity.class);
+        startActivity(kliklokasi);
     }
 
     public void klikkajian (View view) {
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void klikinputlokasi(MenuItem item) {
-        Intent klikinputlokasi = new Intent(MainActivity.this,modullokasi_Activity.class);
+        Intent klikinputlokasi = new Intent(MainActivity.this,modul_input_lokasi_masjid_Activity.class);
         startActivity(klikinputlokasi);
 
         //logika if (jika sudah login maka langsung inten masuk jika tidak tampil tost anda belum login)
@@ -173,6 +173,11 @@ public class MainActivity extends AppCompatActivity {
     public void kliktasbih(View view) {
         Intent kliktasbih = new Intent(MainActivity.this,modultasbih_Activity.class);
         startActivity(kliktasbih);
+    }
+
+    public void kliklive(View view) {
+        Intent kliklive = new Intent(MainActivity.this,modul_live.class);
+        startActivity(kliklive);
     }
 
 
