@@ -9,7 +9,9 @@
     <item android:id="@+id/alquran" android:title="Alquran" android:icon="@drawable/ic_quran" />
     <item android:id="@+id/hukumislam" android:title="Hadist" android:icon="@drawable/ic_hadist" />
     <item android:id="@+id/lokasimasjid" android:title="Lokasi Masjid" android:icon="@drawable/logo_masjid" android:onClick="kliklokasi"/>
-    <item android:id="@+id/inputlokasi" android:title="Input Lokasi" android:icon="@drawable/logo_masjid" android:onClick="klikinputlokasi"/>
+    <item android:id="@+id/inputlokasimasjid" android:title="Input Lokasi Masjid" android:icon="@drawable/logo_masjid" android:onClick="klikinputlokasi"/>
+    <item android:id="@+id/inputlokasirestoran" android:title="Input Lokasi Restoran" android:icon="@drawable/logo_masjid" android:onClick="klikinputrestoran"/>
+    <item android:id="@+id/inputlokasipenginapan" android:title="Input Lokasi Penginapan" android:icon="@drawable/logo_masjid" android:onClick="klikinputpenginapan"/>
 
 
 </menu>

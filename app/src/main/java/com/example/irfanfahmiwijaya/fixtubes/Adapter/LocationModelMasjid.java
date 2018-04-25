@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by irfanfahmiwijaya on 12/04/2018.
  */
 
-public class LocationModel {
+public class LocationModelMasjid {
 
     public String getNama_masjid() {
         return nama_masjid;
@@ -39,7 +39,7 @@ public class LocationModel {
     @SerializedName("longitude")
     private String longitude;
 
-    public LocationModel(String nama_masjid, String latutide, String longitude) {
+    public LocationModelMasjid(String nama_masjid, String latutide, String longitude) {
         this.nama_masjid = nama_masjid;
         this.latutide = latutide;
         this.longitude = longitude;

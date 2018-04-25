@@ -9,8 +9,8 @@ import android.widget.Toast;
 
 import com.example.irfanfahmiwijaya.fixtubes.Adapter.ApiClient;
 import com.example.irfanfahmiwijaya.fixtubes.Adapter.ApiService;
-import com.example.irfanfahmiwijaya.fixtubes.Adapter.ListLocationModel;
-import com.example.irfanfahmiwijaya.fixtubes.Adapter.LocationModel;
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.ListLocationModelRestoran;
+import com.example.irfanfahmiwijaya.fixtubes.Adapter.LocationModelRestoran;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -23,21 +23,17 @@ import java.util.List;
 
 import retrofit2.Call;
 
-public class modullokasi_Activity extends FragmentActivity implements OnMapReadyCallback {
-
+public class modul_tampil_lokasi_restoran_Activity extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
-    private List<LocationModel> mListMarker = new ArrayList<>();
+    private List<LocationModelRestoran> mListMarker = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modullokasi_);
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        setContentView(R.layout.activity_modul_tampil_lokasi_restoran_);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -68,19 +64,20 @@ public class modullokasi_Activity extends FragmentActivity implements OnMapReady
         dialog.show();
 
         ApiService apiService = ApiClient.getClient().create(ApiService.class);
-        Call<ListLocationModel> call = apiService.getAllLocation();
-        call.enqueue(new retrofit2.Callback<ListLocationModel>() {
+        Call<ListLocationModelRestoran> call = apiService.getAllLocationrestoran();
+        call.enqueue(new retrofit2.Callback<ListLocationModelRestoran>() {
             @Override
-            public void onResponse(Call<ListLocationModel> call, retrofit2.Response<ListLocationModel> response) {
+            public void onResponse(Call<ListLocationModelRestoran> call, retrofit2.Response<ListLocationModelRestoran> response) {
                 dialog.dismiss();
                 mListMarker = response.body().getmData();
                 initMarker(mListMarker);
             }
 
+
             @Override
-            public void onFailure(Call<ListLocationModel> call, Throwable t) {
+            public void onFailure(Call<ListLocationModelRestoran> call, Throwable t) {
                 dialog.dismiss();
-                Toast.makeText(modullokasi_Activity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(modul_tampil_lokasi_restoran_Activity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -90,18 +87,17 @@ public class modullokasi_Activity extends FragmentActivity implements OnMapReady
      * Method ini digunakan untuk menampilkan semua marker di maps dari data yang didapat dari database
      * @param listData
      */
-    private void initMarker(List<LocationModel> listData){
+    private void initMarker(List<LocationModelRestoran> listData){
         //iterasi semua data dan tampilkan markernya
         for (int i=0; i<mListMarker.size(); i++){
             //set latlng nya
             LatLng location = new LatLng(Double.parseDouble(mListMarker.get(i).getLatutide()), Double.parseDouble(mListMarker.get(i).getLongitude()));
             //tambahkan markernya
-            mMap.addMarker(new MarkerOptions().position(location).title(mListMarker.get(i).getNama_masjid()));
+            mMap.addMarker(new MarkerOptions().position(location).title(mListMarker.get(i).getNama_restoran()));
             //set latlng index ke 0
             LatLng latLng = new LatLng(Double.parseDouble(mListMarker.get(0).getLatutide()), Double.parseDouble(mListMarker.get(0).getLongitude()));
             //lalu arahkan zooming ke marker index ke 0
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latLng.latitude,latLng.longitude), 13.0f));
         }
     }
-
 }

@@ -1,14 +1,22 @@
 package com.example.irfanfahmiwijaya.fixtubes;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.content.Intent;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.google.android.gms.location.LocationListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -21,33 +29,65 @@ import java.util.Calendar;
 public class modulsholat_Activity extends Activity {
 
 
-
     PrayTime_modulsholat prayers;
     TextView mFajr, mSunrise, mDhuhr, mAsr, mSunset, mMaghrib, mIsha, mDate;
     RelativeLayout mlayoutDate;
 
-
+    LocationManager locationManager;
+    static final int REQUEST_LOCATION = 1;
 
     double timezone;
 
     /* lokasi yg saya gunakan di Bandung
      * lokasi ini akan menentukan kalkulasi waktu
      * setiap daerah akan berbeda*/
-    double latitude = -6.903429;
-    double longitude = 107.5030708;
+
+    double latitude;
+    double longitude;
 
 
     int year, month, day;
 
-    public String[] months = { "Januari", "Februari", "March", "April",
+    public String[] months = {"Januari", "Februari", "March", "April",
             "Mei", "Juni", "Juli", "Augustus", "September", "Oktober",
-            "November", "Desember" };
+            "November", "Desember"};
+
+    private final LocationListener locationListener = new LocationListener() {
+        public void onLocationChanged(Location location) {
+            double longitude = location.getLongitude();
+            double latitude = location.getLatitude();
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sholat);
 
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED & ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+
+        }else{
+            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if (location != null){
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
+
+                ((EditText)findViewById(R.id.lat)).setText(""+latitude);
+                ((EditText)findViewById(R.id.lng)).setText(""+longitude);
+            } else {
+                ((EditText)findViewById(R.id.lat)).setText("Unable to find correct location.");
+                ((EditText)findViewById(R.id.lng)).setText("Unable to find correct location. ");
+            }
+        }
+
+        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        
 
         mFajr		= (TextView) findViewById(R.id.fajr_value);
         mSunrise	= (TextView) findViewById(R.id.Sunrise_value);
@@ -91,11 +131,14 @@ public class modulsholat_Activity extends Activity {
                 showDialog(0);
             }
         });
+
     }
 
     private void ShowPrayTime(int year, int month, int day) {
 		/* ArrayList ini yang nantinya akan di gunakan untuk
          * menampilkan jadwal sholat */
+
+
         ArrayList<String> prayerTimes = prayers.getPrayerTimes(year, month, day, latitude, longitude, timezone);
 //        ArrayList<String> prayerNames = prayers.getTimeNames();
 
@@ -125,8 +168,5 @@ public class modulsholat_Activity extends Activity {
         }
     };
 
-    public void klikkiblat(View view) {
-        Intent klikkiblat = new Intent(modulsholat_Activity.this,modulkiblat_Activity.class);
-        startActivity(klikkiblat);
-    }
+
 }

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         s = (TextView) findViewById(R.id.greeting);
-        btninputlokasi = (MenuItem) findViewById(R.id.inputlokasi);
+        //btninputlokasi = (MenuItem) findViewById(R.id.inputlokasimasjid);
 
 //        btnLogout.setOnClickListener(new View.OnClickListener() {
 //                @Override
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void lokasimasjid(View view) {
-        Intent lokasimasjid = new Intent(MainActivity.this,modullokasi_Activity.class);
+        Intent lokasimasjid = new Intent(MainActivity.this,modul_tampil_lokasi_masjid_Activity.class);
         startActivity(lokasimasjid);
     }
 
@@ -178,6 +178,31 @@ public class MainActivity extends AppCompatActivity {
     public void kliklive(View view) {
         Intent kliklive = new Intent(MainActivity.this,modul_live.class);
         startActivity(kliklive);
+    }
+
+    public void klikinputpenginapan(MenuItem item) {
+        Intent klikinputpenginapan = new Intent(MainActivity.this,modul_input_lokasi_penginapan_Activity.class);
+        startActivity(klikinputpenginapan);
+    }
+
+    public void klikinputrestoran(MenuItem item) {
+        Intent klikinputrestoran = new Intent(MainActivity.this,modul_input_lokasi_restoran_Activity.class);
+        startActivity(klikinputrestoran);
+    }
+
+    public void klikpenginapan(View view) {
+        Intent klikpenginapan = new Intent(MainActivity.this,modul_tampil_lokasi_penginapan_Activity.class);
+        startActivity(klikpenginapan);
+    }
+
+    public void klikrestoran(View view) {
+        Intent klikrestoran = new Intent(MainActivity.this,modul_tampil_lokasi_restoran_Activity.class);
+        startActivity(klikrestoran);
+    }
+
+    public void klikkiblat(View view) {
+        Intent klikkiblat = new Intent(MainActivity.this,modulkiblat_Activity.class);
+        startActivity(klikkiblat);
     }
 
 

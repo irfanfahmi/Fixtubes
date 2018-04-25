@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ApiClient {
-    public static final String URL      = "http://192.168.1.14/imageuploadtest/";
+    public static final String URL      = "http://192.168.1.3/imageuploadtest/";
     public static Retrofit RETROFIT     = null;
 
     public static Retrofit getClient(){

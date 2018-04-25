@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".modul_input_lokasi_masjid_Activity"
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_modul_input_lokasi_masjid_">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearMain">
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="213dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/ivGallerymasjid"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:padding="10dp"
+                    android:src="@android:drawable/ic_menu_gallery"/>
+                <ImageView
+                    android:id="@+id/ivFotomasjid"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:padding="10dp"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/carilokasim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cari Lokasi" />
+
+            <EditText
+                android:id="@+id/nama_masjid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Nama Masjid" />
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Alamat Masjid" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+                <EditText
+                    android:id="@+id/lat"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:hint="Latitude" />
+                <EditText
+                    android:id="@+id/lng"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:hint="Longitude" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>

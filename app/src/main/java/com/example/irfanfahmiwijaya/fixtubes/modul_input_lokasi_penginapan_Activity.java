@@ -43,19 +43,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class modul_input_lokasi_masjid_Activity extends Activity{
+public class modul_input_lokasi_penginapan_Activity extends Activity {
+
     static final int REQUEST_LOCATION = 1;
     LocationManager locationManager;
 
     ImageView ivGallery, ivFoto;
-    EditText namamasjid,latitude,longitude,address;
+    EditText namapenginapan,latitude,longitude,alamatpenginapan;
     CameraPhoto cameraPhoto;
     Button ivCari;
 
     GalleryPhoto galleryPhoto;
 
-    final int GALLERY_REQUEST = 1200;
-    final int CAMERA_REQUEST = 13323;
+    final int GALLERY_REQUEST = 1201;
+    final int CAMERA_REQUEST = 13321;
 
     final String TAG = this.getClass().getSimpleName();
 
@@ -70,35 +71,34 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modul_input_lokasi_masjid_);
-        FloatingActionButton feb_masjid = (FloatingActionButton) findViewById(R.id.upload_masjid);
+        setContentView(R.layout.activity_modul_input_lokasi_penginapan);
+
+        FloatingActionButton fab_penginapan = (FloatingActionButton) findViewById(R.id.upload_penginapan);
 
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         getLocation();
 
-        linearMain = (LinearLayout)findViewById(R.id.linearMain);
+        linearMain = (LinearLayout)findViewById(R.id.linearMainp);
 
         galleryPhoto = new GalleryPhoto(getApplicationContext());
 
-        ivGallery = (ImageView)findViewById(R.id.ivGallerymasjid);
-        ivFoto = (ImageView)findViewById(R.id.ivFotomasjid);
-        ivCari = (Button) findViewById(R.id.carilokasim);
+        ivGallery = (ImageView)findViewById(R.id.ivGallerypenginapan);
+        ivFoto = (ImageView)findViewById(R.id.ivFotopenginapan);
+        ivCari = (Button)findViewById(R.id.carilokasip);
 
 
         cameraPhoto = new CameraPhoto(getApplicationContext());
 
-        namamasjid = (EditText)findViewById(R.id.nama_masjid);
-        address = (EditText)findViewById(R.id.address);
-        latitude = (EditText)findViewById(R.id.lat);
-        longitude = (EditText)findViewById(R.id.lng);
+        namapenginapan = (EditText)findViewById(R.id.namapenginapan);
+        alamatpenginapan = (EditText)findViewById(R.id.alamatpenginapan);
+        latitude = (EditText) findViewById(R.id.latitude);
+        longitude = (EditText)findViewById(R.id.longitude);
 
         ivGallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Sudah Di klik ",Toast.LENGTH_SHORT).show();
                 Intent in = galleryPhoto.openGalleryIntent();
                 startActivityForResult(in, GALLERY_REQUEST);
-
             }
         });
 
@@ -110,7 +110,7 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
                 PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
                 try {
                     //menjalankan place picker
-                    startActivityForResult(builder.build(modul_input_lokasi_masjid_Activity.this), PLACE_PICKER_REQUEST);
+                    startActivityForResult(builder.build(modul_input_lokasi_penginapan_Activity.this), PLACE_PICKER_REQUEST);
 
                     // check apabila <a title="Solusi Tidak Bisa Download Google Play Services di Android" href="http://www.twoh.co/2014/11/solusi-tidak-bisa-download-google-play-services-di-android/" target="_blank">Google Play Services tidak terinstall</a> di HP
                 } catch (GooglePlayServicesRepairableException e) {
@@ -120,8 +120,6 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
                 }
             }
         });
-
-
 
         ivFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,17 +136,16 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
 
         final MyCommand myCommand = new MyCommand(getApplicationContext());
 
-        feb_masjid.setOnClickListener(new View.OnClickListener() {
+        fab_penginapan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 for(String imagePath: imageList){
                     try {
                         Bitmap bitmap = PhotoLoader.init().from(imagePath).requestSize(512, 512).getBitmap();
                         final String encodedString = ImageBase64.encode(bitmap);
 
 
-                        String url = "http://192.168.127.56/final-project/upload_data_masjid.php";
+                        String url = "http://192.168.1.3/imageuploadtest/upload_data_penginapan.php";
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -163,13 +160,12 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
                             @Override
                             protected Map<String, String> getParams() throws AuthFailureError {
                                 Map<String, String> params = new HashMap<>();
-                                params.put("foto_masjid", encodedString);
-                                params.put("sertifakat_masjid", encodedString);
-                                params.put("nama_masjid", namamasjid.getText().toString());
-//                                params.put("no_masjid", nomasjid.getText().toString());
+                                params.put("foto_penginapan", encodedString);
+                                params.put("sertifakat_penginapan", encodedString);
+                                params.put("nama_penginapan", namapenginapan.getText().toString());
+                                params.put("alamat_penginapan", alamatpenginapan.getText().toString());
                                 params.put("latitude", latitude.getText().toString());
                                 params.put("longitude", longitude.getText().toString());
-                                params.put("alamat_masjid", address.getText().toString());
                                 return params;
                             }
                         };
@@ -183,9 +179,10 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
 
 
                 myCommand.execute();
-
             }
         });
+
+
 
     }
 
@@ -253,14 +250,16 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
                 String toastMsglat = String.format(
                         "Latlng %s \n",place.getLatLng().latitude+" "+place.getLatLng().longitude);
 
-                namamasjid.setText(place.getName());
+                namapenginapan.setText(place.getName());
                 latitude.setText(""+place.getLatLng().latitude);
                 longitude.setText(""+place.getLatLng().longitude);
-                address.setText(place.getAddress());
+                alamatpenginapan.setText(place.getAddress());
 
             }
         }
     }
+
+
 
     void getLocation() {
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -273,18 +272,20 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
             Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
             if (location != null){
-                double latitude = location.getLatitude();
-                double longitude = location.getLongitude();
+                double latti = location.getLatitude();
+                double longi = location.getLongitude();
 
-                ((EditText)findViewById(R.id.lat)).setText(""+latitude);
-                ((EditText)findViewById(R.id.lng)).setText(""+longitude);
+                ((EditText)findViewById(R.id.latitude)).setText(""+latti);
+                ((EditText)findViewById(R.id.longitude)).setText(""+longi);
             } else {
-                ((EditText)findViewById(R.id.lat)).setText("Unable to find correct location.");
-                ((EditText)findViewById(R.id.lng)).setText("Unable to find correct location. ");
+                ((EditText)findViewById(R.id.latitude)).setText("Unable to find correct location.");
+                ((EditText)findViewById(R.id.longitude)).setText("Unable to find correct location. ");
             }
         }
 
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -296,4 +297,9 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
                 break;
         }
     }
+
+
+
+
+
 }

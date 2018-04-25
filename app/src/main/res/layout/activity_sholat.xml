@@ -69,6 +69,10 @@
                     android:layout_marginRight="29dp"
                     android:contentDescription="@string/app_name"
                     android:src="@drawable/ic_calendar" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_person_pin_circle_black_24dp"/>
             </RelativeLayout>
 
             <View
@@ -228,13 +232,6 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_height="wrap_content">
-    <Button
-        android:id="@+id/kiblat"
-        android:background="#444"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:onClick="klikkiblat"
-        android:text="Kiblat" />
 
 </LinearLayout>
 

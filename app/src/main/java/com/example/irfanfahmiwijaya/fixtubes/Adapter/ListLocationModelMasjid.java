@@ -8,23 +8,23 @@ import java.util.List;
  * Created by irfanfahmiwijaya on 12/04/2018.
  */
 
-public class ListLocationModel {
+public class ListLocationModelMasjid {
 
     @SerializedName("data")
-    private List<LocationModel> mData;
+    private List<LocationModelMasjid> mData;
 
-    public ListLocationModel(List<LocationModel> mData) {
+    public ListLocationModelMasjid(List<LocationModelMasjid> mData) {
         this.mData = mData;
     }
 
-    public ListLocationModel() {
+    public ListLocationModelMasjid() {
     }
 
-    public List<LocationModel> getmData() {
+    public List<LocationModelMasjid> getmData() {
         return mData;
     }
 
-    public void setmData(List<LocationModel> mData) {
+    public void setmData(List<LocationModelMasjid> mData) {
         this.mData = mData;
     }
 }

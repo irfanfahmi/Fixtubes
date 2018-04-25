@@ -9,5 +9,11 @@ import retrofit2.http.GET;
 
 public interface ApiService {
     @GET("JsonDisplayMarker.php")
-    Call<ListLocationModel> getAllLocation();
+    Call<ListLocationModelMasjid> getAllLocation();
+
+    @GET("Tampil_Data_Penginapan.php")
+    Call<ListLocationModelPenginapan> getAllLocationpenginapan();
+
+    @GET("Tampil_Data_Restoran.php")
+    Call<ListLocationModelRestoran> getAllLocationrestoran();
 }
