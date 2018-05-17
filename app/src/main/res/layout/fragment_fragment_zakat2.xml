@@ -26,7 +26,7 @@
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#398f3d"
+            android:background="@color/colorPrimaryDark"
             android:textColor="@color/putih"
             android:text="Binatang Ternak" />
 
@@ -36,7 +36,7 @@
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#45a149"
+            android:background="@color/colorPrimary"
             android:textColor="@color/putih"
             android:text="Emas/Perak" />
 
@@ -46,7 +46,7 @@
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#5cba60"
+            android:background="@color/colorAccent"
             android:textColor="@color/putih"
             android:text="Pertanian/Hasil Bumi" />
 

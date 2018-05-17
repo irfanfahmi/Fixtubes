@@ -145,7 +145,7 @@ public class modul_input_lokasi_penginapan_Activity extends Activity {
                         final String encodedString = ImageBase64.encode(bitmap);
 
 
-                        String url = "http://192.168.1.3/imageuploadtest/upload_data_penginapan.php";
+                        String url = "http://192.168.127.1/imageuploadtest/upload_data_penginapan.php";
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {

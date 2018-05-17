@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#fcfcfc">
+    android:background="#ffffff">
 
 
     <android.support.v4.widget.NestedScrollView
@@ -20,7 +20,7 @@
             tools:context="com.example.irfanfahmiwijaya.tubesbaru.MainActivity"
             android:orientation="vertical"
             android:padding="10dp"
-            android:background="#cfcfcf"
+            android:background="#f0f0f0"
             android:gravity="center"
             android:id="@+id/ll">
 
@@ -112,7 +112,7 @@
                             android:id="@+id/sholat"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/cerclebackgroundprimary"
+                            android:background="@drawable/cerclebackgroundmerahdarah"
                             android:padding="10dp"
                             android:src="@drawable/sh" />
 
@@ -148,7 +148,7 @@
                             android:id="@+id/zakat"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/cerclebackgroundprimary"
+                            android:background="@drawable/cerclebackgroundgreen"
                             android:padding="10dp"
                             android:src="@drawable/logo_zakat" />
 
@@ -195,7 +195,7 @@
                                     android:id="@+id/puasa"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/cerclebackgroundprimary"
+                                    android:background="@drawable/cerclebackgroundorange"
                                     android:padding="10dp"
                                     android:src="@drawable/logo_puasa" />
 
@@ -238,7 +238,7 @@
                                     android:id="@+id/hadist"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/cerclebackgroundprimary"
+                                    android:background="@drawable/cerclebackgroundpurple"
                                     android:padding="10dp"
                                     android:src="@drawable/ic_quran" />
 
@@ -274,7 +274,7 @@
                                     android:id="@+id/imageVied"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/cerclebackgroundprimary"
+                                    android:background="@drawable/cerclebackgroundyello"
                                     android:padding="10dp"
                                     android:src="@drawable/ic_hadist" />
 
@@ -379,7 +379,7 @@
                                     android:id="@+id/kajian"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/cerclebackgroundprimary"
+                                    android:background="@drawable/cerclebackgroundmerahdarah"
                                     android:padding="10dp"
                                     android:src="@drawable/ic_video_kajian" />
 
@@ -415,7 +415,7 @@
                                     android:id="@+id/streaming_mekah"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/cerclebackgroundprimary"
+                                    android:background="@drawable/cerclebackgroundgreen"
                                     android:padding="10dp"
                                     android:src="@drawable/ic_live_mekah" />
 
@@ -451,7 +451,7 @@
                                     android:id="@+id/doa"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:background="@drawable/cerclebackgroundprimary"
+                                    android:background="@drawable/cerclebackgroundorange"
                                     android:padding="10dp"
                                     android:src="@drawable/ic_doa" />
 
@@ -488,7 +488,7 @@
                                 android:id="@+id/alquran"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
-                                android:background="@drawable/cerclebackgroundprimary"
+                                android:background="@drawable/cerclebackgroundpurple"
                                 android:padding="10dp"
                                 android:src="@drawable/ic_haji" />
 
@@ -561,7 +561,7 @@
                             android:id="@+id/masjid"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/cerclebackgroundprimary"
+                            android:background="@drawable/cerclebackgroundyello"
                             android:padding="10dp"
                             android:src="@drawable/logo_masjid" />
 
@@ -634,7 +634,7 @@
                             android:id="@+id/rumahmakan"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/cerclebackgroundprimary"
+                            android:background="@drawable/cerclebackgroundmerahdarah"
                             android:padding="10dp"
                             android:src="@drawable/ic_restoran_halal" />
 
@@ -671,7 +671,7 @@
                             android:id="@+id/asmaulhusna"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/cerclebackgroundprimary"
+                            android:background="@drawable/cerclebackgroundgreen"
                             android:padding="10dp"
                             android:src="@drawable/ic_99" />
 
@@ -707,7 +707,7 @@
                             android:id="@+id/kiblat"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@drawable/cerclebackgroundprimary"
+                            android:background="@drawable/cerclebackgroundorange"
                             android:padding="10dp"
                             android:src="@drawable/ic_kiblat" />
 
@@ -790,7 +790,7 @@
             android:id="@+id/collaps_bar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bannerappfix"
+            android:background="@drawable/bgbenner"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"

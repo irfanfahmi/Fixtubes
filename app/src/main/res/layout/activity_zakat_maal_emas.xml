@@ -60,7 +60,7 @@
             android:id="@+id/hitung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#398f3d"
+            android:background="@color/colorPrimary"
             android:text="Hitung" />
 
         <TextView
@@ -73,7 +73,7 @@
             android:text=" "
             android:textColor="#44ffffff"
             android:layout_marginTop="10dp"
-            android:background="#3a903e"/>
+            />
 
         <TextView
             android:id="@+id/ket"

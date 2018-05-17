@@ -6,7 +6,7 @@ package com.example.irfanfahmiwijaya.fixtubes.Adapter;
 
 public class Constants {
 
-    private static final String ROOT_URL = "http://192.168.1.3/imageuploadtest/v1/";
+    private static final String ROOT_URL = "http://192.168.1.11/imageuploadtest/v1/";
 
     public static final String URL_REGISTER = ROOT_URL+"registerUser.php";
     public static final String URL_LOGIN = ROOT_URL+"userLogin.php";

@@ -69,14 +69,13 @@
             android:id="@+id/hitung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#398f3d"
+            android:background="@color/colorPrimary"
             android:text="Hitung" />
 
         <TextView
             android:id="@+id/tampil"
             android:padding="10dp"
             android:layout_marginTop="10dp"
-            android:background="#3a903e"
             android:textSize="18dp"
             android:textStyle="bold"
             android:layout_width="match_parent"

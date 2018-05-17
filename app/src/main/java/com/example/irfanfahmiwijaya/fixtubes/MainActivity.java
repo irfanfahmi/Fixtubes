@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.irfanfahmiwijaya.fixtubes.Database.DBHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem btninputlokasi;
     private Button btnLogout;
     private TextView s;
+    public static String db = "baitulmuslim1.db";
+    DBHelper dbHelper;
 
 
 
@@ -107,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void kliksholat(View view) {
-        Intent kliksholat = new Intent(MainActivity.this,modulsholat_Activity.class);
+        Intent kliksholat = new Intent(MainActivity.this,modulsholat_Activity_1.class);
         startActivity(kliksholat);
     }
 
@@ -133,12 +138,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void klikdoa(View view) {
-        Intent klikdoa = new Intent(MainActivity.this,moduldoa_Activity.class);
-        startActivity(klikdoa);
+        dbHelper = new DBHelper(getApplicationContext(), db);
+        if (!dbHelper.isDataBaseExists()) {
+            Toast.makeText(getApplicationContext(), "DB Tidak ada", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(i);
+//            this.finish();
+        } else {
+            Toast.makeText(getApplicationContext(), "DB Ada", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(MainActivity.this, modul_doa_baru.class);
+            startActivity(i);
+//            this.finish();
+        }
+
+//        Intent klikdoa = new Intent(MainActivity.this,modul_doa_baru.class);
+//        startActivity(klikdoa);
     }
 
     public void klikdoa(MenuItem item) {
-        Intent klikdoa = new Intent(MainActivity.this,moduldoa_Activity.class);
+        Intent klikdoa = new Intent(MainActivity.this,modul_doa_baru.class);
         startActivity(klikdoa);
     }
 
@@ -204,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
         Intent klikkiblat = new Intent(MainActivity.this,modulkiblat_Activity.class);
         startActivity(klikkiblat);
     }
+
 
 
 //    public void kliklogin(View view) {

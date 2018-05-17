@@ -148,7 +148,7 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
                         final String encodedString = ImageBase64.encode(bitmap);
 
 
-                        String url = "http://192.168.127.56/final-project/upload_data_masjid.php";
+                        String url = "http://192.168.127.1/final-project/upload_data_masjid.php";
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -256,6 +256,7 @@ public class modul_input_lokasi_masjid_Activity extends Activity{
                 namamasjid.setText(place.getName());
                 latitude.setText(""+place.getLatLng().latitude);
                 longitude.setText(""+place.getLatLng().longitude);
+
                 address.setText(place.getAddress());
 
             }

@@ -31,7 +31,7 @@ public class modul_tampil_lokasi_masjid_Activity extends FragmentActivity implem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modul_input_lokasi_masjid_);
+        setContentView(R.layout.activity_modul_tampil_lokasi_masjid_);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);

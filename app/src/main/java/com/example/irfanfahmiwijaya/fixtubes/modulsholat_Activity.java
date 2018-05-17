@@ -10,13 +10,16 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,7 +42,7 @@ public class modulsholat_Activity extends Activity {
     double timezone;
 
     /* lokasi yg saya gunakan di Bandung
-     * lokasi ini akan menentukan kalkulasi waktu
+     * lokasi ini akan menentukan kalkulasi waktu,.
      * setiap daerah akan berbeda*/
 
     double latitude;
@@ -52,12 +55,7 @@ public class modulsholat_Activity extends Activity {
             "Mei", "Juni", "Juli", "Augustus", "September", "Oktober",
             "November", "Desember"};
 
-    private final LocationListener locationListener = new LocationListener() {
-        public void onLocationChanged(Location location) {
-            double longitude = location.getLongitude();
-            double latitude = location.getLatitude();
-        }
-    };
+
 
 
     @Override
@@ -65,39 +63,57 @@ public class modulsholat_Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sholat);
 
-        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED & ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        //double getlata = getIntent().getDoubleExtra();
+        //latitude = getlata;
 
-        }else{
-            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
-            if (location != null){
-                double latitude = location.getLatitude();
-                double longitude = location.getLongitude();
+        getIntent().getStringExtra("data2");
 
-                ((EditText)findViewById(R.id.lat)).setText(""+latitude);
-                ((EditText)findViewById(R.id.lng)).setText(""+longitude);
-            } else {
-                ((EditText)findViewById(R.id.lat)).setText("Unable to find correct location.");
-                ((EditText)findViewById(R.id.lng)).setText("Unable to find correct location. ");
-            }
+        FusedLocationProviderClient mFusedLocation = LocationServices.getFusedLocationProviderClient(this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
         }
+
+        mFusedLocation.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    double getLat = location.getLatitude();
+                    double getLang = location.getLongitude();
+                    // Do it all with location
+                    Log.d("My Current location", "Lat : " + location.getLatitude() + " Long : " + location.getLongitude());
+                    // Display in Toast
+                    Toast.makeText(modulsholat_Activity.this,
+                            "Lat : " + location.getLatitude() + " Long : " + location.getLongitude() + " Lokasi :" + location.getProvider(),
+                            Toast.LENGTH_LONG).show();
+                    latitude = getLat;
+                    longitude = getLang;
+                }
+            }
+        });
+
+
 
         locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         
 
-        mFajr		= (TextView) findViewById(R.id.fajr_value);
-        mSunrise	= (TextView) findViewById(R.id.Sunrise_value);
-        mDhuhr		= (TextView) findViewById(R.id.Dhuhr_value);
-        mAsr		= (TextView) findViewById(R.id.Asr_value);
+        mFajr		= findViewById(R.id.fajr_value);
+        mSunrise	= findViewById(R.id.Sunrise_value);
+        mDhuhr		= findViewById(R.id.Dhuhr_value);
+        mAsr		= findViewById(R.id.Asr_value);
         //mSunset		= (TextView) findViewById(R.id.Sunset_value);
-        mMaghrib	= (TextView) findViewById(R.id.Maghrib_value);
-        mIsha		= (TextView) findViewById(R.id.Isha_value);
-        mDate		= (TextView) findViewById(R.id.date_value);
-        mlayoutDate	= (RelativeLayout) findViewById(R.id.layout_date);
+        mMaghrib	= findViewById(R.id.Maghrib_value);
+        mIsha		= findViewById(R.id.Isha_value);
+        mDate		= findViewById(R.id.date_value);
+        mlayoutDate	= findViewById(R.id.layout_date);
 
         /* timezone juga mempengaruhi perbedaan waktu
          * untuk itu timezone sudah di set */
